@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title youtube comments
+        link(rel='stylesheet', href='/dump_styling.css')
+    body
+        h1 comments
+        div(id="comments")
+            each comment, i in comment_dump
+                div(class="comment")
+                    div(class="comment-meta")
+                        a(class="comment-author" href="!!!")= comment.user_name
+                        //- span(class="comment-date")
+                    div(class="comment-content")= comment.text
+                    if comment.reply > 0
+                        div(class="comment_replies")
+                            each reply, j in comment.final_reply_list
+                                div(class="reply-meta")
+                                    a(class="reply-author" href="!!!")= reply.user_name
+                                    //- span(class="comment-date")
+                                div(class="reply-content")= reply.text
+                            
+
+
+            
+
