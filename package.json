@@ -1,0 +1,22 @@
+{
+    "name": "youtube_comments_app",
+    "version": "0.0.1",
+    "description": "This is a Youtube's comments scraper",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node app"
+    },
+    "author": "Ori",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.17.1",
+      "node-fetch": "^2.6.1",
+      "path": "^0.12.7",
+      "pug": "^3.0.0",
+      "request": "^2.88.2",
+      "request-promise": "^4.2.6"
+    },
+    "devDependencies": {}
+  }
+  
