@@ -9,16 +9,16 @@ router.get("/", function(req,res){
 })
 
 router.get("/video_id=:videoId/max_comments=:maxComments", function(req, res) {
-    console.log(req.params);
+    
     ( async () => {
         
-        const trying = new Scrape_all(req.params["videoId"], req.params["maxComments"])
-        let new_ans = await trying.starter()
+        const scraper = new Scrape_all(req.params["videoId"], req.params["maxComments"])
+        console.log("Please wait while comments and replies are being fetched.")
+        let new_ans = await scraper.starter()
 
         console.log(new_ans);
         res.render((__dirname + "\\views\\comment_dump.pug"), {comment_dump: new_ans});
-        console.log("done");
-        console.log(trying.main_list.length)
+        
         
      })();
     
