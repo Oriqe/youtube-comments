@@ -91,6 +91,7 @@ class Scraping {
           }
           if (comment_total > this.max_comments) {
             this.main_list = this.main_list.slice(0,this.max_comments)
+              break
           }
 
         }
