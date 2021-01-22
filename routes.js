@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const Scrape_all = require("./resources/scraping_functions")
+const Scrape_all = require("./resources/scraping_functionalities.js")
 
 
 console.log(Scrape_all)
