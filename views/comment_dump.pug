@@ -4,23 +4,20 @@ html
         title youtube comments
         link(rel='stylesheet', href='/dump_styling.css')
     body
-        h1 comments
+        h2= `${comment_dump.length} Comments & ${reply_count} Replies` 
         div(id="comments")
             each comment, i in comment_dump
                 div(class="comment")
                     div(class="comment-meta")
-                        a(class="comment-author" href="!!!")= comment.user_name
-                        //- span(class="comment-date")
-                    div(class="comment-content")= comment.text
-                    if comment.reply > 0
+                        a(class="comment-author" href= comment.getChannelUrl())= comment.getUserName()
+                        
+                    div(class="comment-content")= comment.getText()
+                    if comment.getReply() > 0
                         div(class="comment_replies")
-                            each reply, j in comment.final_reply_list
+                            each reply, j in comment.getFinalReplyList()
                                 div(class="reply-meta")
-                                    a(class="reply-author" href="!!!")= reply.user_name
-                                    //- span(class="comment-date")
-                                div(class="reply-content")= reply.text
-                            
-
-
-            
-
+                                    a(class="reply-author" href="!!!")= reply.getUserName()
+                                    
+                                div(class="reply-content")= reply.getText()
+                    hr
+      
