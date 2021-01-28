@@ -38,6 +38,15 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  color: #111;
+  font-size: 2rem;
+  line-height: 2;
+  font-weight: 600;
+
+  text-align: center;
+}
+
 .comment-content {
   margin-left: 2em;
 }
